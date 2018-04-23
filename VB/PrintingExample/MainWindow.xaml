@@ -1,0 +1,72 @@
+﻿<dx:ThemedWindow
+    x:Class="PrintingExample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:PrintingExample"
+    xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    Height="600"
+    Width="800"
+    mc:Ignorable="d"
+    DataContext="{dxmvvm:ViewModelSource local:MainViewModel}"
+    ShowInTaskbar="False"
+    Title="Printing Example"
+    WindowStyle="SingleBorderWindow">
+
+    <Grid>
+        <dxsch:SchedulerControl
+            x:Name="scheduler"
+            CommandBarStyle="Ribbon"
+            GroupType="Resource">
+            <dxsch:DayView ResourcesPerPage="3" ShowAllDayArea="False" />
+            <!--region #PrintButton-->
+            <dxsch:SchedulerControl.RibbonActions>
+                <dxb:InsertAction ContainerName="{x:Static dxsch:DefaultBarItemNames.Pages_Home}" Index="6">
+                    <dxr:RibbonPageGroup Caption="Print">
+                        <dxb:BarButtonItem
+                            Command="{Binding PrintSchedulerCommand}"
+                            CommandParameter="{DXBinding '@ElementName(scheduler)'}"
+                            Content="Print Scheduler"
+                            LargeGlyph="{dx:DXImage Image=Print_32x32.png}" />
+                    </dxr:RibbonPageGroup>
+                </dxb:InsertAction>
+            </dxsch:SchedulerControl.RibbonActions>
+            <!--endregion #PrintButton-->
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:EventToCommand Command="{Binding AppointmentsUpdatedCommand}" EventName="AppointmentsUpdated" />
+            </dxmvvm:Interaction.Behaviors>
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appointments}" ResourcesSource="{Binding Doctors}">
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings
+                            AllDay="AllDay"
+                            End="EndTime"
+                            Id="Id"
+                            LabelId="IssueId"
+                            Location="Location"
+                            RecurrenceInfo="RecurrenceInfo"
+                            Reminder="ReminderInfo"
+                            ResourceId="DoctorId"
+                            Start="StartTime"
+                            StatusId="PaymentStateId"
+                            Subject="PatientName"
+                            Type="Type">
+                            <dxsch:CustomFieldMapping Mapping="InsuranceNumber" Name="InsuranceNumber" />
+                            <dxsch:CustomFieldMapping Mapping="FirstVisit" Name="FirstVisit" />
+                            <dxsch:CustomFieldMapping Mapping="Notes" Name="Notes" />
+                        </dxsch:AppointmentMappings>
+                    </dxsch:DataSource.AppointmentMappings>
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Caption="Name" Id="Id" />
+                    </dxsch:DataSource.ResourceMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+        </dxsch:SchedulerControl>
+    </Grid>
+
+</dx:ThemedWindow>
