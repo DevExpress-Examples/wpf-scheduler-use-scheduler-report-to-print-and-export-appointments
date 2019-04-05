@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [MainWindow.xaml](./CS/PrintingExample/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/PrintingExample/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/PrintingExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/PrintingExample/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/PrintingExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/PrintingExample/MainWindow.xaml.vb))
 * [MyPrintHelper.cs](./CS/PrintingExample/MyPrintHelper.cs) (VB: [MyPrintHelper.vb](./VB/PrintingExample/MyPrintHelper.vb))
 * [MainViewModel.cs](./CS/PrintingExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/PrintingExample/ViewModel/MainViewModel.vb))
