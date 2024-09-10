@@ -129,7 +129,7 @@ public class XtraSchedulerReport1 : DevExpress.XtraScheduler.Reporting.XtraSched
             this.Detail,
             this.topMarginBand1,
             this.bottomMarginBand1});
-            this.Margins = new System.Drawing.Printing.Margins(55, 100, 100, 100);
+            this.Margins = new DevExpress.Drawing.DXMargins(55, 100, 100, 100);
             this.Version = "17.2";
             this.Views.AddRange(new DevExpress.XtraScheduler.Reporting.ReportViewBase[] {
             this.reportDayView1});
