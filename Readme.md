@@ -24,7 +24,7 @@ This example demonstrates how to print and export the Scheduler control. The *
 * [Print a Scheduler from a Document Preview Window](https://docs.devexpress.com/WPF/119770/controls-and-libraries/scheduler/examples/how-to-print-a-scheduler-using-reports-from-a-document-preview-window)
 * [Printing Templates](https://docs.devexpress.com/WPF/400666/controls-and-libraries/scheduler/printing-templates)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-use-scheduler-report-to-print-and-export-appointments&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-use-scheduler-report-to-print-and-export-appointments&~~~was_helpful=no)
 
