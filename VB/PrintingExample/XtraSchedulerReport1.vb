@@ -130,7 +130,7 @@ Public Class XtraSchedulerReport1
         ' XtraSchedulerReport1
         ' 
         Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Detail, topMarginBand1, bottomMarginBand1})
-        Margins = New System.Drawing.Printing.Margins(55, 100, 100, 100)
+        Margins = New DevExpress.Drawing.DXMargins(55, 100, 100, 100)
         Version = "17.2"
         Views.AddRange(New DevExpress.XtraScheduler.Reporting.ReportViewBase() {reportDayView1})
         CType(reportDayView1, System.ComponentModel.ISupportInitialize).EndInit()
